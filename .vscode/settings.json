@@ -6,5 +6,9 @@
             "**/maestro/**",
             "**/.maestro/**"
         ]
-    }
+    },
+    "maestroWorkbench.filePatterns": [
+        "tests/**/*.yaml",
+        "tests/**/*.yml"
+    ]
 }

@@ -346,8 +346,7 @@ class _DashboardPageState extends State<DashboardPage> {
 class TransactionDetailsPage extends StatelessWidget {
   final Map<String, dynamic> transaction;
 
-  const TransactionDetailsPage({Key? key, required this.transaction})
-      : super(key: key);
+  const TransactionDetailsPage({super.key, required this.transaction});
 
   @override
   Widget build(BuildContext context) {

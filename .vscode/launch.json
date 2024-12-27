@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "maestro",
+            "name": "wallet",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "maestro (profile mode)",
+            "name": "wallet (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "maestro (release mode)",
+            "name": "wallet (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

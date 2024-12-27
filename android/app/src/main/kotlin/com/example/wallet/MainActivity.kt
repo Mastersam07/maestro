@@ -1,4 +1,4 @@
-package com.example.maestro
+package com.example.wallet
 
 import io.flutter.embedding.android.FlutterActivity
 
