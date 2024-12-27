@@ -1,0 +1,10 @@
+{
+    "yaml.schemas": {
+        "file:///Users/codefarmer/Desktop/mastersam/maestro-workbench/schema/schema.v0.json": [
+            "maestro.yaml",
+            "**/*.maestro.yaml",
+            "**/maestro/**",
+            "**/.maestro/**"
+        ]
+    }
+}
