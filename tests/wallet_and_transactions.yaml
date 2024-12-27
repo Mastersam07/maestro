@@ -1,0 +1,30 @@
+appId: com.example.wallet
+---
+- launchApp:
+- tapOn: "Skip"
+- inputText: "test@example.com"
+- inputText: "password123"
+- tapOn:
+    id: "login_button"
+
+# Check wallet carousel
+- assertVisible: "BTC"
+- swipe:
+    direction: LEFT
+- assertVisible: "ETH"
+- swipe:
+    direction: LEFT
+- assertVisible: "USDT"
+
+# Check transaction history
+- assertVisible: "Transaction History"
+- tapOn:
+    text: "0.1 BTC"
+- assertVisible: "Transaction Details"
+- assertVisible: "Received"
+- back:
+- tapOn:
+    text: "0.2 BTC"
+- assertVisible: "Transaction Details"
+- assertVisible: "Sent"
+- back:
