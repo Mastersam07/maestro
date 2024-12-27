@@ -1,0 +1,12 @@
+appId: com.example.wallet
+---
+- launchApp:
+- assertVisible: "Welcome"
+- swipe:
+    direction: LEFT
+- assertVisible: "Multiple Wallets"
+- swipe:
+    direction: LEFT
+- assertVisible: "Secure"
+- tapOn: "Skip"
+- assertVisible: "Login"
