@@ -233,7 +233,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   final List<Map<String, dynamic>> _transactions = [
     {'type': 'BTC', 'amount': 0.1, 'date': '2024-03-27', 'isReceived': true},
-    {'type': 'BTC', 'amount': 0.2, 'date': '2024-03-26', 'isReceived': false},
+    {'type': 'ETH', 'amount': 0.2, 'date': '2024-03-26', 'isReceived': false},
   ];
 
   @override
@@ -265,6 +265,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       children: [
                         Text(
                           wallet['type'],
+                          semanticsLabel:  wallet['type'],
                           style: const TextStyle(
                               fontSize: 24, color: Colors.white),
                         ),
@@ -313,26 +314,29 @@ class _DashboardPageState extends State<DashboardPage> {
               itemCount: _transactions.length,
               itemBuilder: (context, index) {
                 final transaction = _transactions[index];
-                return ListTile(
-                  leading: Icon(
-                    transaction['isReceived']
-                        ? Icons.arrow_downward
-                        : Icons.arrow_upward,
-                    color:
-                        transaction['isReceived'] ? Colors.green : Colors.red,
+                return Semantics(
+                  identifier: 'transaction_${transaction['type']}',
+                  child: ListTile(
+                    leading: Icon(
+                      transaction['isReceived']
+                          ? Icons.arrow_downward
+                          : Icons.arrow_upward,
+                      color:
+                          transaction['isReceived'] ? Colors.green : Colors.red,
+                    ),
+                    title:
+                        Text('${transaction['amount']} ${transaction['type']}'),
+                    subtitle: Text(transaction['date']),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              TransactionDetailsPage(transaction: transaction),
+                        ),
+                      );
+                    },
                   ),
-                  title:
-                      Text('${transaction['amount']} ${transaction['type']}'),
-                  subtitle: Text(transaction['date']),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            TransactionDetailsPage(transaction: transaction),
-                      ),
-                    );
-                  },
                 );
               },
             ),

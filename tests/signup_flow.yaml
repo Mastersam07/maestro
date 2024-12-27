@@ -1,0 +1,14 @@
+appId: com.example.wallet
+---
+- launchApp: com.example.wallet
+- tapOn: "Skip"
+- assertVisible: "Login"
+- assertVisible: "Create Account"
+- tapOn: "Create Account"
+- assertVisible: "Sign Up"
+- inputText: "testuser"
+- inputText: "test@example.com"
+- inputText: "password123"
+- tapOn: Sign Up
+- assertVisible: "Dashboard"
+- stopApp
